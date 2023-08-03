@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__2">
+    <managed-bean-name id="__4">backing_page_altaProvedores</managed-bean-name>
+    <managed-bean-class id="__3">com.grupofarmacos.hcmc.ap005.view.backing.page.AltaProvedores</managed-bean-class>
+    <managed-bean-scope id="__1">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1page/altaProvedores.jspx-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name id="__5">backing_fragment_altaProvedoresFragmento</managed-bean-name>
+    <managed-bean-class id="__8">com.grupofarmacos.hcmc.ap005.view.backing.fragment.AltaProvedoresFragmento</managed-bean-class>
+    <managed-bean-scope id="__6">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1fragment/altaProvedoresFragmento.jsff-->
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name id="__9">backing_custom_employeeCustom</managed-bean-name>
+    <managed-bean-class id="__12">com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom</managed-bean-class>
+    <managed-bean-scope id="__11">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__13">
+    <managed-bean-name id="__15">backing_fragment_accesoRestringido</managed-bean-name>
+    <managed-bean-class id="__14">com.grupofarmacos.hcmc.ap005.view.backing.fragment.AccesoRestringido</managed-bean-class>
+    <managed-bean-scope id="__16">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1fragment/accesoRestringido.jsff-->
+  </managed-bean>
+</adfc-config>

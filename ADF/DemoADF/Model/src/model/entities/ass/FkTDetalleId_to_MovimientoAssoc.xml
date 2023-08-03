@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTDetalleId_to_MovimientoAssoc"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="MovimientoEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.entities.eo.MovimientoEO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MovimientoEO"/>
+      <Attr Name="_foreignKey"
+        Value="model.entities.eo.MovimientoEO.PkTMovimientoIdMov"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.IdMovimiento"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="DetalleEO"
+    Cardinality="-1"
+    Owner="model.entities.eo.DetalleEO"
+    HasOwner="true">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="DetalleEO"/>
+      <Attr Name="_foreignKey"
+        Value="model.entities.eo.DetalleEO.FkTDetalleIdMov"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.IdMovimiento"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <ViewUsage
+    Name="ClienteVO1"
+    ViewObjectName="model.entities.vo.ClienteVO"/>
+  <ViewUsage
+    Name="DetalleVO1"
+    ViewObjectName="model.entities.vo.DetalleVO"/>
+  <ViewUsage
+    Name="ProductoVO1"
+    ViewObjectName="model.entities.vo.ProductoVO"/>
+  <ViewUsage
+    Name="MovimientoVO1"
+    ViewObjectName="model.entities.vo.MovimientoVO"/>
+  <ViewUsage
+    Name="DetalleVO2"
+    ViewObjectName="model.entities.vo.DetalleVO"/>
+  <ViewLinkUsage
+    Name="Movimiento_to_DetalleVL1"
+    ViewLinkObjectName="model.entities.queries.Movimiento_to_DetalleVL"
+    SrcViewUsageName="model.app.AppModule.MovimientoVO1"
+    DstViewUsageName="model.app.AppModule.DetalleVO2"
+    Reversed="false"/>
+</AppModule>

@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM" default="AP005AMLocal">
+      <AppModuleConfig name="AP005Local" ApplicationName="com.grupofarmacos.hcmc.ap005.model.am.AP005" DeployPlatform="LOCAL" jbo.project="com.grupofarmacos.hcmc.ap005.model.AltaProvedoresModel">
+         <Security AppModuleJndiName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/apex2DS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AP005Shared" ApplicationName="com.grupofarmacos.hcmc.ap005.model.am.AP005" DeployPlatform="LOCAL" jbo.project="com.grupofarmacos.hcmc.ap005.model.AltaProvedoresModel">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/apex2DS"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="com.grupofarmacos.hcmc.ap005.model.AltaProvedoresModel" name="AP005AMLocal" ApplicationName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM">
+         <Security AppModuleJndiName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM"/>
+         <Custom JDBCDataSource="hcmapex"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="com.grupofarmacos.hcmc.ap005.model.AltaProvedoresModel" name="AP005AMShared" ApplicationName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM">
+         <AM-Pooling jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1" jbo.ampool.resetnontransactionalstate="false"/>
+         <Security AppModuleJndiName="com.grupofarmacos.hcmc.ap005.model.am.AP005AM"/>
+         <Custom JDBCDataSource="hcmapex"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClienteEO"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="T_CLIENTE"
+  AliasName="ClienteEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="IdCliente"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    ColumnName="ID_CLIENTE"
+    SQLType="NUMERIC"
+    Domain="oracle.jbo.domain.DBSequence"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="T_CLIENTE"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nombre"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="NOMBRE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="T_CLIENTE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="30"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="T_CLIENTE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MovimientoEO"
+    Association="model.entities.ass.FkMovimientoId_to_ClienteAssoc"
+    AssociationEnd="model.entities.ass.FkMovimientoId_to_ClienteAssoc.MovimientoEO"
+    AssociationOtherEnd="model.entities.ass.FkMovimientoId_to_ClienteAssoc.ClienteEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC0011740">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011740"/>
+      <Attr Name="_checkCondition" Value='"ID_CLIENTE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0011741">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011741"/>
+      <Attr Name="_checkCondition" Value='"NOMBRE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.ClienteEO.Nombre"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="uk_ClienteEO">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UK_CLIENTE_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.ClienteEO.IdCliente"/>
+    </AttrArray>
+  </Key>
+</Entity>

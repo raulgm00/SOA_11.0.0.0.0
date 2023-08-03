@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductoEO"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="T_PRODUCTO"
+  AliasName="ProductoEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="IdProducto"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    ColumnName="ID_PRODUCTO"
+    SQLType="NUMERIC"
+    Domain="oracle.jbo.domain.DBSequence"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="T_PRODUCTO"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nombre"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="NOMBRE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="T_PRODUCTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Descripcion"
+    IsNotNull="true"
+    Precision="60"
+    ColumnName="DESCRIPCION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="T_PRODUCTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Precio"
+    Precision="8"
+    Scale="2"
+    ColumnName="PRECIO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_PRODUCTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="DetalleEO"
+    Association="model.entities.ass.FkTDetalleId_to_ProductoAssoc"
+    AssociationEnd="model.entities.ass.FkTDetalleId_to_ProductoAssoc.DetalleEO"
+    AssociationOtherEnd="model.entities.ass.FkTDetalleId_to_ProductoAssoc.ProductoEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkTProductoIdPro"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_T_PRODUCTO_ID_PRO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.ProductoEO.IdProducto"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011749">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011749"/>
+      <Attr Name="_checkCondition" Value='"ID_PRODUCTO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0011750">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011750"/>
+      <Attr Name="_checkCondition" Value='"NOMBRE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.ProductoEO.Nombre"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011751">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011751"/>
+      <Attr Name="_checkCondition" Value='"DESCRIPCION" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.ProductoEO.Descripcion"/>
+    </AttrArray>
+  </Key>
+</Entity>

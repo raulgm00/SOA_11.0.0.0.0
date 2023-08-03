@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DetalleEO"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="T_DETALLE"
+  AliasName="DetalleEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.eo.DetalleEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="IdDetalle"
+    ColumnName="ID_DETALLE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="T_DETALLE"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IdMovimiento"
+    IsNotNull="true"
+    ColumnName="ID_MOVIMIENTO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_DETALLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IdProducto"
+    IsNotNull="true"
+    ColumnName="ID_PRODUCTO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_DETALLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Cantidad"
+    IsNotNull="true"
+    ColumnName="CANTIDAD"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_DETALLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Subtotal"
+    Precision="10"
+    Scale="2"
+    ColumnName="SUBTOTAL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_DETALLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MovimientoEO"
+    Association="model.entities.ass.FkTDetalleId_to_MovimientoAssoc"
+    AssociationEnd="model.entities.ass.FkTDetalleId_to_MovimientoAssoc.MovimientoEO"
+    AssociationOtherEnd="model.entities.ass.FkTDetalleId_to_MovimientoAssoc.DetalleEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductoEO"
+    Association="model.entities.ass.FkTDetalleId_to_ProductoAssoc"
+    AssociationEnd="model.entities.ass.FkTDetalleId_to_ProductoAssoc.ProductoEO"
+    AssociationOtherEnd="model.entities.ass.FkTDetalleId_to_ProductoAssoc.DetalleEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkTMovimientoIdDet"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_T_MOVIMIENTO_ID_DET"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.IdDetalle"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011753">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011753"/>
+      <Attr Name="_checkCondition" Value='"ID_DETALLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0011754">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011754"/>
+      <Attr Name="_checkCondition" Value='"ID_MOVIMIENTO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.IdMovimiento"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011755">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011755"/>
+      <Attr Name="_checkCondition" Value='"ID_PRODUCTO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.IdProducto"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011756">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011756"/>
+      <Attr Name="_checkCondition" Value='"CANTIDAD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.Cantidad"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTDetalleIdMov">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_T_MOVIMIENTO_ID_MOV"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_T_DETALLE_ID_MOV"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.IdMovimiento"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTDetalleIdPro">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_T_PRODUCTO_ID_PRO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_T_DETALLE_ID_PRO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.DetalleEO.IdProducto"/>
+    </AttrArray>
+  </Key>
+</Entity>

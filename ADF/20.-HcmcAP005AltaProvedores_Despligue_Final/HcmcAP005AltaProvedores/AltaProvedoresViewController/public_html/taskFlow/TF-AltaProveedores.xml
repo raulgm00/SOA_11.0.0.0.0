@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="TF-AltaProveedores">
+    <default-activity id="__2">garantizarAcceso</default-activity>
+    <view id="altaProvedoresFragmento">
+      <page>/fragment/altaProvedoresFragmento.jsff</page>
+    </view>
+    <view id="accesoRestringido">
+      <page>/fragment/accesoRestringido.jsff</page>
+    </view>
+    <method-call id="garantizarAcceso">
+      <method>#{bindings.garantizarAcceso.execute}</method>
+      <return-value id="__5">#{pageFlowScope.p_redireccionamiento}</return-value>
+      <outcome id="__4">
+        <fixed-outcome>garantizarAcceso</fixed-outcome>
+      </outcome>
+    </method-call>
+    <router id="redirecciona">
+      <case>
+        <expression>#{pageFlowScope.p_redireccionamiento eq true}</expression>
+        <outcome id="__28">accesoPermitido</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.p_redireccionamiento eq false}</expression>
+        <outcome id="__29">accesoRestringido</outcome>
+      </case>
+      <default-outcome>accesoRestringido</default-outcome>
+    </router>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">garantizarAcceso</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome id="__25">garantizarAcceso</from-outcome>
+        <to-activity-id id="__27">redirecciona</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id id="__31">redirecciona</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome id="__34">accesoPermitido</from-outcome>
+        <to-activity-id id="__32">altaProvedoresFragmento</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__36">
+        <from-outcome id="__37">accesoRestringido</from-outcome>
+        <to-activity-id id="__35">accesoRestringido</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.66.73" id="altaProvedoresFragmentoPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="EmployeeCustom"
+              id="EmployeeCustomIterator"/>
+    <iterator Binds="EmployeeTableVO1" RangeSize="25"
+              DataControl="AP005AMDataControl" id="EmployeeTableVO1Iterator"/>
+   
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeeCustomIterator"
+                     id="employee_number_psoft">
+      <AttrNames>
+        <Item Value="employee_number_psoft"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="vendor_name">
+      <AttrNames>
+        <Item Value="vendor_name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="curp">
+      <AttrNames>
+        <Item Value="curp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="gender">
+      <AttrNames>
+        <Item Value="gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="from_date">
+      <AttrNames>
+        <Item Value="from_date"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="birth_date">
+      <AttrNames>
+        <Item Value="birth_date"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="work_telephone">
+      <AttrNames>
+        <Item Value="work_telephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="rfc">
+      <AttrNames>
+        <Item Value="rfc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="vendor_site_code">
+      <AttrNames>
+        <Item Value="vendor_site_code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator"
+                     id="default_expense_account">
+      <AttrNames>
+        <Item Value="default_expense_account"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator"
+                     id="liability_account">
+      <AttrNames>
+        <Item Value="liability_account"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator"
+                     id="prepayment_account">
+      <AttrNames>
+        <Item Value="prepayment_account"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="bank_name">
+      <AttrNames>
+        <Item Value="bank_name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="account_num">
+      <AttrNames>
+        <Item Value="account_num"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="currency_code">
+      <AttrNames>
+        <Item Value="currency_code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="org_name">
+      <AttrNames>
+        <Item Value="org_name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="active_user">
+      <AttrNames>
+        <Item Value="active_user"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator" id="type_employ">
+      <AttrNames>
+        <Item Value="type_employ"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCustomIterator"
+                     id="effective_start_date">
+      <AttrNames>
+        <Item Value="effective_start_date"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="searchEmploy" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="searchEmploy"
+                  IsViewObjectMethod="false" DataControl="EmployeeCustom"
+                  InstanceName="EmployeeCustom.dataProvider">
+      <NamedData NDName="numEmp"
+                 NDValue="#{bindings.vendor_site_code.inputValue}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getProperties"
+                  InstanceName="AP005AMDataControl.dataProvider"
+                  DataControl="AP005AMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getProperties"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AP005AMDataControl.methodResults.getProperties_AP005AMDataControl_dataProvider_getProperties_result">
+      <NamedData NDName="criterial" NDValue="AP005" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="insertEmploy"
+                  InstanceName="AP005AMDataControl.dataProvider"
+                  DataControl="AP005AMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="insertEmploy"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AP005AMDataControl.methodResults.insertEmploy_AP005AMDataControl_dataProvider_insertEmploy_result"/>
+    <methodAction id="insertPayload"
+                  InstanceName="AP005AMDataControl.dataProvider"
+                  DataControl="AP005AMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="insertPayload"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.AP005AMDataControl.methodResults.insertPayload_AP005AMDataControl_dataProvider_insertPayload_result">
+      <NamedData NDName="payload" NDType="java.lang.String"/>
+      <NamedData NDName="estatus" NDType="java.lang.String"/>
+      <NamedData NDName="dateTime" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="EmployeeTableVO1Iterator" id="EmployeeTableVO1">
+      <nodeDefinition DefName="com.grupofarmacos.hcmc.ap005.model.vo.EmployeeTableVO"
+                      Name="EmployeeTableVO10">
+        <AttrNames>
+          <Item Value="EmployeNumberPsoft"/>
+          <Item Value="VendorName"/>
+          <Item Value="ActiveUser"/>
+          <Item Value="TypeUser"/>
+          <Item Value="EffectiveStartDate"/>
+          <Item Value="Accion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmployeeTableVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

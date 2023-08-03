@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_fragment_altaProvedoresFragmento-->
+  <af:panelGroupLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pgl1}"
+                       id="pgl1"
+                       layout="scroll">
+    <af:panelHeader text="Busqueda de Empleado"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ph1}"
+                    id="ph1" inlineStyle="border-color:transparent;">
+      <f:facet name="context"/>
+      <f:facet name="menuBar"/>
+      <f:facet name="toolbar"/>
+      <f:facet name="legend"/>
+      <f:facet name="info"/>
+      <af:panelFormLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pfl1}"
+                          id="pfl1" maxColumns="2" rows="1"
+                          inlineStyle="border-color:transparent;">
+        <f:facet name="footer"/>
+        <af:inputText value="#{bindings.vendor_site_code.inputValue}"
+                      label="No. Empleado:"
+                      required="#{bindings.employee_number_psoft.hints.mandatory}"
+                      columns="#{bindings.employee_number_psoft.hints.displayWidth}"
+                      maximumLength="#{bindings.employee_number_psoft.hints.precision}"
+                      shortDesc="#{bindings.employee_number_psoft.hints.tooltip}"
+                      binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.it1}"
+                      id="it1">
+          <f:validator binding="#{bindings.employee_number_psoft.validator}"/>
+        </af:inputText>
+        <af:commandButton actionListener="#{bindings.searchEmploy.execute}"
+                          text="Buscar"
+                          disabled="#{!bindings.searchEmploy.enabled}"
+                          binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.cb1}"
+                          id="cb1" icon="/resources/images/search_ena.png"/>
+      </af:panelFormLayout>
+    </af:panelHeader>
+    <af:panelHeader text="Datos del Empleado"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ph2}"
+                    id="ph2" inlineStyle="border-color:transparent;">
+      <f:facet name="context"/>
+      <f:facet name="menuBar"/>
+      <f:facet name="toolbar"/>
+      <f:facet name="legend"/>
+      <f:facet name="info"/>
+      <af:panelGridLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pgl2}"
+                          id="pgl2">
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr1}"
+                    id="gr1">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc1}"
+                       id="gc1">
+            <af:panelLabelAndMessage label="Nombre:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam1}"
+                                     id="plam1">
+              <af:outputText value="#{bindings.vendor_name.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot1}"
+                             id="ot1"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc2}"
+                       id="gc2">
+            <af:panelLabelAndMessage label="No. Empleado"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam2}"
+                                     id="plam2">
+              <af:outputText value="#{bindings.employee_number_psoft.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot2}"
+                             id="ot2"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr2}"
+                    id="gr2">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc3}"
+                       id="gc3">
+            <af:panelLabelAndMessage label="CURP:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam3}"
+                                     id="plam3">
+              <af:outputText value="#{bindings.curp.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot3}"
+                             id="ot3"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc4}"
+                       id="gc4">
+            <af:panelLabelAndMessage label="Sexo:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam4}"
+                                     id="plam4">
+              <af:outputText value="#{bindings.gender.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot4}"
+                             id="ot4"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr3}"
+                    id="gr3">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc5}"
+                       id="gc5">
+            <af:panelLabelAndMessage label="Fecha Ingreso:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam5}"
+                                     id="plam5">
+              <af:outputText value="#{bindings.from_date.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot5}"
+                             id="ot5"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc6}"
+                       id="gc6">
+            <af:panelLabelAndMessage label="Fecha Nacimiento:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam6}"
+                                     id="plam6">
+              <af:outputText value="#{bindings.birth_date.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot6}"
+                             id="ot6"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr4}"
+                    id="gr4">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc7}"
+                       id="gc7">
+            <af:panelLabelAndMessage label="Email:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam7}"
+                                     id="plam7">
+              <af:outputText value="#{bindings.email.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot7}"
+                             id="ot7"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc8}"
+                       id="gc8">
+            <af:panelLabelAndMessage label="Tel. Oficina"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam8}"
+                                     id="plam8">
+              <af:outputText value="#{bindings.work_telephone.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot8}"
+                             id="ot8"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr5}"
+                    id="gr5">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc9}"
+                       id="gc9">
+            <af:panelLabelAndMessage label="RFC:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam9}"
+                                     id="plam9">
+              <af:outputText value="#{bindings.rfc.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot9}"
+                             id="ot9"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc10}"
+                       id="gc10">
+            <af:panelLabelAndMessage label="Codigo Empleado"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam10}"
+                                     id="plam10">
+              <af:outputText value="#{bindings.vendor_site_code.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot10}"
+                             id="ot10"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr6}"
+                    id="gr6">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc11}"
+                       id="gc11">
+            <af:panelLabelAndMessage label="Cuenta de Gastos"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam11}"
+                                     id="plam11">
+              <af:outputText value="#{bindings.default_expense_account.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot11}"
+                             id="ot11"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc12}"
+                       id="gc12">
+            <af:panelLabelAndMessage label="Cuenta Pasivo"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam12}"
+                                     id="plam12">
+              <af:outputText value="#{bindings.liability_account.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot12}"
+                             id="ot12"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr7}"
+                    id="gr7">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc13}"
+                       id="gc13">
+            <af:panelLabelAndMessage label="Cuenta Pago:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam13}"
+                                     id="plam13">
+              <af:outputText value="#{bindings.prepayment_account.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot13}"
+                             id="ot13"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc14}"
+                       id="gc14">
+            <af:panelLabelAndMessage label="Banco:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam14}"
+                                     id="plam14">
+              <af:outputText value="#{bindings.bank_name.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot14}"
+                             id="ot14"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr8}"
+                    id="gr8">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc15}"
+                       id="gc15">
+            <af:panelLabelAndMessage label="Cuenta Cheques:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam15}"
+                                     id="plam15">
+              <af:outputText value="#{bindings.account_num.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot15}"
+                             id="ot15"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc16}"
+                       id="gc16">
+            <af:panelLabelAndMessage label="Moneda:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam16}"
+                                     id="plam16">
+              <af:outputText value="#{bindings.currency_code.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot16}"
+                             id="ot16"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr9}"
+                    id="gr9">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc17}"
+                       id="gc17">
+            <af:panelLabelAndMessage label="Organización"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam17}"
+                                     id="plam17">
+              <af:outputText value="#{bindings.org_name.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot17}"
+                             id="ot17"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc18}"
+                       id="gc18">
+            <af:panelLabelAndMessage label="Estatus:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam18}"
+                                     id="plam18">
+              <af:outputText value="#{bindings.active_user.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot18}"
+                             id="ot18"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr10}"
+                    id="gr10">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc19}"
+                       id="gc19">
+            <af:panelLabelAndMessage label="Grupo Pago:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam19}"
+                                     id="plam19">
+              <af:outputText value="#{bindings.type_employ.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot19}"
+                             id="ot19"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc20}"
+                       id="gc20">
+            <af:panelLabelAndMessage label="Fecha Efectiva GP:"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam20}"
+                                     id="plam20">
+              <af:outputText value="#{bindings.effective_start_date.inputValue}"
+                             binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ot20}"
+                             id="ot20"/>
+            </af:panelLabelAndMessage>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px"
+                    binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gr11}"
+                    id="gr11">
+          <af:gridCell marginStart="5px" width="50%"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc21}"
+                       id="gc21"/>
+          <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.gc22}"
+                       id="gc22" halign="center">
+            <af:commandButton text="Agregar"
+                              binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.cb2}"
+                              id="cb2" icon="/resources/images/add-icon.png"
+                              action="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.addEmployProgramatic}"/>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+      <af:panelCollection binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pc1}"
+                          id="pc1" styleClass="AFStretchWidth">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar">
+          <af:toolbar binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.t2}"
+                      id="t2">
+            <af:commandToolbarButton text="Enviar Clasificación"
+                                     binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.ctb1}"
+                                     id="ctb1"
+                                     icon="/resources/images/accept-icon.png"
+                                     visible="false"
+                                     action="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.invokePopupSendClasification}">
+              <!--af:showPopupBehavior popupId="::p1"/-->
+            </af:commandToolbarButton>
+          </af:toolbar>
+        </f:facet>
+        <af:table value="#{bindings.EmployeeTableVO1.collectionModel}" var="row"
+                  rows="#{bindings.EmployeeTableVO1.rangeSize}"
+                  emptyText="#{bindings.EmployeeTableVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.EmployeeTableVO1.rangeSize}"
+                  rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.EmployeeTableVO1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.EmployeeTableVO1.collectionModel.makeCurrent}"
+                  rowSelection="single"
+                  binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.t1}"
+                  id="t1" columnStretching="last" partialTriggers="cb3 ::ctb1">
+          <af:column sortProperty="#{bindings.EmployeeTableVO1.hints.EmployeNumberPsoft.name}"
+                     sortable="false"
+                     headerText="#{bindings.EmployeeTableVO1.hints.EmployeNumberPsoft.label}"
+                     id="c4" width="89">
+            <af:outputText value="#{row.EmployeNumberPsoft}" id="ot25"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeeTableVO1.hints.VendorName.name}"
+                     sortable="false"
+                     headerText="#{bindings.EmployeeTableVO1.hints.VendorName.label}"
+                     id="c3" width="141">
+            <af:outputText value="#{row.VendorName}" id="ot24"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeeTableVO1.hints.ActiveUser.name}"
+                     sortable="false"
+                     headerText="#{bindings.EmployeeTableVO1.hints.ActiveUser.label}"
+                     id="c6" width="115">
+            <af:outputText value="#{row.ActiveUser}" id="ot22"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeeTableVO1.hints.TypeUser.name}"
+                     sortable="false"
+                     headerText="#{bindings.EmployeeTableVO1.hints.TypeUser.label}"
+                     id="c5" width="115">
+            <af:outputText value="#{row.TypeUser}" id="ot23"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeeTableVO1.hints.EffectiveStartDate.name}"
+                     sortable="false"
+                     headerText="#{bindings.EmployeeTableVO1.hints.EffectiveStartDate.label}"
+                     id="c2" width="200">
+            <af:outputText value="#{row.EffectiveStartDate}" id="ot26"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeeTableVO1.hints.Accion.name}"
+                     sortable="false"
+                     headerText="#{bindings.EmployeeTableVO1.hints.Accion.label}"
+                     id="c1" width="198">
+            <af:commandButton actionListener="#{bindings.Delete.execute}"
+                              text="Delete" id="cb3"
+                              icon="/resources/images/delete_ena.png"
+                              action="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.setComponentVisible}"/>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </af:panelHeader>
+    <af:popup binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.p1}" id="p1"
+              contentDelivery="lazyUncached" childCreation="deferred">
+      <af:dialog id="d1" inlineStyle="height:85px; width:270px;"
+                 affirmativeTextAndAccessKey="Aceptar"
+                 cancelTextAndAccessKey="Cancelar"
+                 title="Confirmación"
+                 titleIconSource="/resources/images/warning_status.gif"
+                 type="cancel">
+        <af:outputText value="¿Estas seguro de enviar tu clasificación?" id="ot27"/>
+        <f:facet name="buttonBar">
+          <af:commandButton text="Aceptar"
+                            binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.cb4}"
+                            id="cb4"
+                            actionListener="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.showPopupRelojArena}"
+                            action="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.executeSend}"/>
+        </f:facet>
+      </af:dialog>
+    </af:popup>
+    <af:popup binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.p2}"
+              id="p2" contentDelivery="lazyUncached"
+              childCreation="deferred">
+      <af:dialog binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.d2}"
+                 id="d2" title="Error Operation"
+                 titleIconSource="/afr/error.png" type="none"
+                 affirmativeTextAndAccessKey="Cerrar"
+                 inlineStyle="height:85px; width:270px;">
+        <af:panelStretchLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.psl2}"
+                               id="psl2" startWidth="5px" endWidth="5px"
+                               topHeight="5px" bottomHeight="5px"
+                               inlineStyle="width:480px; height:30px;">
+          <f:facet name="center">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pgl3}"
+                                 id="pgl3" halign="left" valign="middle"
+                                 styleClass="AFStretchWidth">
+              <af:panelLabelAndMessage label="#{pageFlowScope.msgError}"
+                                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam22}"
+                                       id="plam22"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+        <f:facet name="buttonBar">
+          <af:commandButton text="Aceptar"
+                            binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.cb6}"
+                            id="cb6"
+                            actionListener="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.hidePopupRelojArena}"/>
+        </f:facet>
+      </af:dialog>
+    </af:popup>
+    <af:popup binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.p3}"
+              id="p3" childCreation="deferred"
+              contentDelivery="lazyUncached">
+      <af:dialog binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.d3}"
+                 id="d3" title="Success Operation"
+                 titleIconSource="/afr/confirmation.png" type="none"
+                 affirmativeTextAndAccessKey="Cerrar">
+        <af:panelStretchLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.psl1}"
+                               id="psl1"
+                               inlineStyle="width:480px; height:30px;"
+                               startWidth="5px" endWidth="5px"
+                               bottomHeight="5px" topHeight="5px">
+          <f:facet name="center">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pgl4}"
+                                 id="pgl4" halign="left" valign="middle"
+                                 styleClass="AFStretchWidth">
+              <af:panelLabelAndMessage label="#{pageFlowScope.msgSucess}"
+                                       binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.plam21}"
+                                       id="plam21"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+        <f:facet name="buttonBar">
+          <af:commandButton text="Aceptar"
+                            binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.cb5}"
+                            id="cb5"
+                            actionListener="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.hidePopupRelojArena}"
+                            action="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.refreshAll}"/>
+        </f:facet>
+      </af:dialog>
+    </af:popup>
+    <af:popup binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.p4}"
+              id="p4" contentDelivery="lazyUncached" childCreation="immediate">
+      <af:dialog binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.d4}"
+                 id="d4" title="Procesando"
+                 titleIconSource="/resources/images/reloj.gif" type="none">
+        <af:panelStretchLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.psl3}"
+                               id="psl3" startWidth="5px" endWidth="5px"
+                               topHeight="5px" bottomHeight="5px"
+                               inlineStyle="width:200px; height:30px;">
+          <f:facet name="center">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.pgl5}"
+                                 id="pgl5" valign="middle"
+                                 styleClass="AFStretchWidth"
+                                 layout="vertical" halign="center">
+              <af:image source="/resources/images/gifs/animated_spinner.gif"
+                        shortDesc="upload"
+                        binding="#{backingBeanScope.backing_fragment_altaProvedoresFragmento.i1}"
+                        id="i1" inlineStyle="width:35px; height:31px;"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:dialog>
+    </af:popup>
+  </af:panelGroupLayout>
+</jsp:root>

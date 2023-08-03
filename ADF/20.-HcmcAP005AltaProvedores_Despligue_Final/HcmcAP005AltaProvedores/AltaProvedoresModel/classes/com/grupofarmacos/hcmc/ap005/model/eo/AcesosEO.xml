@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AcesosEO"
+  Version="11.1.1.66.73"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HCMC_ACC"
+  AliasName="AcesosEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="NoEmp"
+    IsNotNull="true"
+    Precision="11"
+    Scale="0"
+    ColumnName="NO_EMP"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HCMC_ACC"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HCMC_ACC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Accesos"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="ACCESOS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HCMC_ACC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Comentarios"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName="COMENTARIOS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HCMC_ACC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PkHcmcNoEmp"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_HCMC_NO_EMP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.AcesosEO.NoEmp"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007306">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007306"/>
+      <Attr Name="_checkCondition" Value='"NO_EMP" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.AcesosEO.NoEmp"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007307">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007307"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.AcesosEO.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007308">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007308"/>
+      <Attr Name="_checkCondition" Value='"ACCESOS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.AcesosEO.Accesos"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007309">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007309"/>
+      <Attr Name="_checkCondition" Value='"COMENTARIOS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.AcesosEO.Comentarios"/>
+    </AttrArray>
+  </Key>
+</Entity>

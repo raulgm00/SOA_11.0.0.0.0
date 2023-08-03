@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BitacoraEO"
+  Version="11.1.1.66.73"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HCMC_AP005_BITACORA"
+  AliasName="BitacoraEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    Precision="11"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="HCMC_AP005_BITACORA"
+    PrimaryKey="true"
+    IsUpdateable="false"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+      <Attr Name="_SequenceStart" Value="1"/>
+      <Attr Name="_SequenceName" Value="HCMC_AP005_BIT_SEQ"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Payload"
+    IsQueriable="false"
+    IsNotNull="true"
+    ColumnName="PAYLOAD"
+    Type="java.lang.String"
+    ColumnType="LONG"
+    TableName="HCMC_AP005_BITACORA"/>
+  <Attribute
+    Name="Execution"
+    ColumnName="EXECUTION"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="HCMC_AP005_BITACORA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="com.grupofarmacos.hcmc.ap005.model.eo.BitacoraEO.Execution_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.grupofarmacos.hcmc.ap005.model.eo.BitacoraEO.Execution_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HCMC_AP005_BITACORA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC007271">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007271"/>
+      <Attr Name="_checkCondition" Value='"ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007272">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007272"/>
+      <Attr Name="_checkCondition" Value='"PAYLOAD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.BitacoraEO.Payload"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007273">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007273"/>
+      <Attr Name="_checkCondition" Value='"STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.grupofarmacos.hcmc.ap005.model.eo.BitacoraEO.Status"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.grupofarmacos.hcmc.ap005.model.AltaProvedoresModelBundle"/>
+  </ResourceBundle>
+</Entity>

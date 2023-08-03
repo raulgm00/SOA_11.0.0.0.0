@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.66.73"
+          id="Employe" Package="com.grupofarmacos.hcmc.sx002.model.bean.employe"
+          BeanClass="com.grupofarmacos.hcmc.sx002.model.bean.employe.Employe"
+          isJavaBased="true">
+  <Attribute Name="salutation" Type="java.lang.String"/>
+  <Attribute Name="firstName" Type="java.lang.String"/>
+  <Attribute Name="middleName" Type="java.lang.String"/>
+  <Attribute Name="lastName" Type="java.lang.String"/>
+  <Attribute Name="previousLastName" Type="java.lang.String"/>
+  <Attribute Name="nameSuffix" Type="java.lang.String"/>
+  <Attribute Name="displayName" Type="java.lang.String"/>
+  <Attribute Name="preferredName" Type="java.lang.String"/>
+  <Attribute Name="honors" Type="java.lang.String"/>
+  <Attribute Name="correspondenceLanguage" Type="java.lang.String"/>
+  <Attribute Name="personNumber" Type="java.lang.String"/>
+  <Attribute Name="workPhoneCountryCode" Type="java.lang.String"/>
+  <Attribute Name="workPhoneAreaCode" Type="java.lang.String"/>
+  <Attribute Name="workPhoneNumber" Type="java.lang.String"/>
+  <Attribute Name="workPhoneExtension" Type="java.lang.String"/>
+  <Attribute Name="workFaxCountryCode" Type="java.lang.String"/>
+  <Attribute Name="workFaxAreaCode" Type="java.lang.String"/>
+  <Attribute Name="workFaxNumber" Type="java.lang.String"/>
+  <Attribute Name="workFaxExtension" Type="java.lang.String"/>
+  <Attribute Name="workMobilePhoneCountryCode" Type="java.lang.String"/>
+  <Attribute Name="workMobilePhoneAreaCode" Type="java.lang.String"/>
+  <Attribute Name="workMobilePhoneNumber" Type="java.lang.String"/>
+  <Attribute Name="workMobilePhoneExtension" Type="java.lang.String"/>
+  <Attribute Name="homePhoneCountryCode" Type="java.lang.String"/>
+  <Attribute Name="homePhoneAreaCode" Type="java.lang.String"/>
+  <Attribute Name="homePhoneNumber" Type="java.lang.String"/>
+  <Attribute Name="homePhoneExtension" Type="java.lang.String"/>
+  <Attribute Name="homeFaxCountryCode" Type="java.lang.String"/>
+  <Attribute Name="homeFaxAreaCode" Type="java.lang.String"/>
+  <Attribute Name="homeFaxNumber" Type="java.lang.String"/>
+  <Attribute Name="homeFaxExtension" Type="java.lang.String"/>
+  <Attribute Name="workEmail" Type="java.lang.String"/>
+  <Attribute Name="addressLine1" Type="java.lang.String"/>
+  <Attribute Name="addressLine2" Type="java.lang.String"/>
+  <Attribute Name="addressLine3" Type="java.lang.String"/>
+  <Attribute Name="city" Type="java.lang.String"/>
+  <Attribute Name="region" Type="java.lang.String"/>
+  <Attribute Name="region2" Type="java.lang.String"/>
+  <Attribute Name="country" Type="java.lang.String"/>
+  <Attribute Name="postalCode" Type="java.lang.String"/>
+  <Attribute Name="dateOfBirth" Type="java.lang.String"/>
+  <Attribute Name="ethnicity" Type="java.lang.String"/>
+  <Attribute Name="projectedTerminationDate" Type="java.lang.String"/>
+  <Attribute Name="legalEntityId" Type="java.lang.String"/>
+  <Attribute Name="hireDate" Type="java.lang.String"/>
+  <Attribute Name="terminationDate" Type="java.lang.String"/>
+  <Attribute Name="gender" Type="java.lang.String"/>
+  <Attribute Name="maritalStatus" Type="java.lang.String"/>
+  <Attribute Name="nationalIdType" Type="java.lang.String"/>
+  <Attribute Name="nationalId" Type="java.lang.String"/>
+  <Attribute Name="nationalIdCountry" Type="java.lang.String"/>
+  <Attribute Name="nationalIdExpirationDate" Type="java.lang.String"/>
+  <Attribute Name="personId" Type="java.lang.String"/>
+  <Attribute Name="effectiveStartDate" Type="java.lang.String"/>
+  <Attribute Name="userName" Type="java.lang.String"/>
+  <Attribute Name="citizenshipId" Type="java.lang.String"/>
+  <Attribute Name="citizenshipStatus" Type="java.lang.String"/>
+  <Attribute Name="citizenshipLegislationCode" Type="java.lang.String"/>
+  <Attribute Name="citizenshipToDate" Type="java.lang.String"/>
+  <Attribute Name="religion" Type="java.lang.String"/>
+  <Attribute Name="religionId" Type="java.lang.String"/>
+  <Attribute Name="passportIssueDate" Type="java.lang.String"/>
+  <Attribute Name="passportNumber" Type="java.lang.String"/>
+  <Attribute Name="passportIssuingCountry" Type="java.lang.String"/>
+  <Attribute Name="passportId" Type="java.lang.String"/>
+  <Attribute Name="passportExpirationDate" Type="java.lang.String"/>
+  <Attribute Name="licenseNumber" Type="java.lang.String"/>
+  <Attribute Name="driversLicenseExpirationDate" Type="java.lang.String"/>
+  <Attribute Name="driversLicenseIssuingCountry" Type="java.lang.String"/>
+  <Attribute Name="driversLicenseId" Type="java.lang.String"/>
+  <Attribute Name="militaryVetStatus" Type="java.lang.String"/>
+  <Attribute Name="creationDate" Type="java.lang.String"/>
+  <Attribute Name="lastUpdateDate" Type="java.lang.String"/>
+  <AccessorAttribute id="links" IsCollection="true"
+                     BeanClass="com.grupofarmacos.hcmc.sx002.model.bean.link.Link"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="additionalProperties" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.Object"/>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="void" id="setAdditionalProperty"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.grupofarmacos.hcmc.sx002.model.bean.employe.Employe"
+                     BeanClass="com.grupofarmacos.hcmc.sx002.model.bean.employe.Employe"
+                     id="Employe"/>
+</JavaBean>

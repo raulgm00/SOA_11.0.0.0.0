@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.66.73" id="DataControls"
+                    Package="grupofarmacos.hcmc.ap005.view">
+  <AdapterDataControl id="EmployeeCustom"
+                      FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"
+                      BeanClass="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.grupofarmacos.hcmc.sx002.model.bean.link.Link"/>
+      <TypeInfo FullName="com.grupofarmacos.hcmc.sx002.model.bean.employe.Employe"/>
+      <TypeInfo FullName="com.grupofarmacos.hcmc.ap005.view.utils.AppModReturn"/>
+      <TypeInfo FullName="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

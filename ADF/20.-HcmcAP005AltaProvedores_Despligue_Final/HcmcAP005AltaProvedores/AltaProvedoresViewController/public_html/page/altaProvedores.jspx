@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1"
+                 binding="#{backingBeanScope.backing_page_altaProvedores.d1}">
+      <af:form id="f1"
+               binding="#{backingBeanScope.backing_page_altaProvedores.f1}">
+        <af:pageTemplate viewId="/template/templateFarmacos.jspx" id="pt1"
+                         binding="#{backingBeanScope.backing_page_altaProvedores.pt1}">
+          <f:facet name="contenido">
+            <af:panelStretchLayout binding="#{backingBeanScope.backing_page_altaProvedores.psl1}"
+                                   id="psl1" endWidth="49px">
+              <f:facet name="center">
+                <af:region value="#{bindings.TFAltaProveedores1.regionModel}"
+                           id="r1"
+                           binding="#{backingBeanScope.backing_page_altaProvedores.r1}"/>
+              </f:facet>
+              <f:facet name="start">
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_page_altaProvedores.pgl1}"
+                                     id="pgl1">
+                  <af:spacer width="50" height="10"
+                             binding="#{backingBeanScope.backing_page_altaProvedores.s2}"
+                             id="s2"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="end">
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_page_altaProvedores.pgl2}"
+                                     id="pgl2">
+                  <af:spacer width="50" height="10"
+                             binding="#{backingBeanScope.backing_page_altaProvedores.s1}"
+                             id="s1"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:attribute name="titulo" value="Alta de Proveedores tipo Empleado"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_page_altaProvedores-->
+</jsp:root>

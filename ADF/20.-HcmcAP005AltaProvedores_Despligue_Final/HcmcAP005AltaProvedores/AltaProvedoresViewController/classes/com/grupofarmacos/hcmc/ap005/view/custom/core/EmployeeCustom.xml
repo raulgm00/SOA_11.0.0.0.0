@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.66.73"
+          id="EmployeeCustom"
+          Package="com.grupofarmacos.hcmc.ap005.view.custom.core"
+          BeanClass="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"
+          isJavaBased="true">
+  <Attribute Name="index" Type="java.math.BigDecimal"/>
+  <Attribute Name="employee_number_psoft" Type="java.lang.String"/>
+  <Attribute Name="employee_number_old" Type="java.lang.String"/>
+  <Attribute Name="first_name" Type="java.lang.String"/>
+  <Attribute Name="last_name" Type="java.lang.String"/>
+  <Attribute Name="gender" Type="java.lang.String"/>
+  <Attribute Name="curp" Type="java.lang.String"/>
+  <Attribute Name="from_date" Type="java.lang.String"/>
+  <Attribute Name="to_date" Type="java.lang.String"/>
+  <Attribute Name="birth_date" Type="java.lang.String"/>
+  <Attribute Name="email" Type="java.lang.String"/>
+  <Attribute Name="work_telephone" Type="java.lang.String"/>
+  <Attribute Name="employee_number_sicoss" Type="java.lang.String"/>
+  <Attribute Name="employee_number_sonarh" Type="java.lang.String"/>
+  <Attribute Name="vendor_name" Type="java.lang.String"/>
+  <Attribute Name="rfc" Type="java.lang.String"/>
+  <Attribute Name="vendor_site_code" Type="java.lang.String"/>
+  <Attribute Name="default_expense_account" Type="java.lang.String"/>
+  <Attribute Name="liability_account" Type="java.lang.String"/>
+  <Attribute Name="prepayment_account" Type="java.lang.String"/>
+  <Attribute Name="bank_name" Type="java.lang.String"/>
+  <Attribute Name="account_num" Type="java.math.BigDecimal"/>
+  <Attribute Name="currency_code" Type="java.lang.String"/>
+  <Attribute Name="org_name" Type="java.lang.String"/>
+  <Attribute Name="process_id" Type="java.lang.String"/>
+  <Attribute Name="org_id" Type="java.math.BigDecimal"/>
+  <Attribute Name="creation_date" Type="java.lang.String"/>
+  <Attribute Name="created_by" Type="java.lang.String"/>
+  <Attribute Name="last_update_date" Type="java.lang.String"/>
+  <Attribute Name="last_updated_by" Type="java.lang.String"/>
+  <Attribute Name="effective_start_date" Type="java.lang.String"/>
+  <Attribute Name="effective_sequence" Type="java.math.BigDecimal"/>
+  <Attribute Name="active_user" Type="java.lang.String"/>
+  <Attribute Name="type_employ" Type="java.lang.String"/>
+  <Attribute Name="previousLastName" Type="java.lang.String"/>
+  <MethodAccessor IsCollection="false" Type="void" id="searchEmploy"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="numEmp" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Boolean" id="clearView"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Boolean"
+                  id="searchAtributos" ReturnNodeName="Return">
+    <ParameterInfo id="employe"
+                   Type="com.grupofarmacos.hcmc.sx002.model.bean.employe.Employe"
+                   isStructured="true"/>
+    <ParameterInfo id="uri" Type="java.lang.StringBuilder"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setSecirity"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Boolean" id="activeUser"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="employe"
+                   Type="com.grupofarmacos.hcmc.sx002.model.bean.employe.Employe"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.grupofarmacos.hcmc.ap005.view.utils.AppModReturn"
+                  BeanClass="com.grupofarmacos.hcmc.ap005.view.utils.AppModReturn"
+                  id="invocarAM" ReturnNodeName="AppModReturn">
+    <ParameterInfo id="method" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="params" Type="java.util.Map" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"
+                     BeanClass="com.grupofarmacos.hcmc.ap005.view.custom.core.EmployeeCustom"
+                     id="EmployeeCustom"/>
+</JavaBean>

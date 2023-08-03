@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DetalleVO"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  SelectList="DetalleEO.ID_DETALLE, 
+       DetalleEO.ID_MOVIMIENTO, 
+       DetalleEO.ID_PRODUCTO, 
+       DetalleEO.CANTIDAD, 
+       DetalleEO.SUBTOTAL"
+  FromList="T_DETALLE DetalleEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.entities.vo.DetalleVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="DetalleEO"
+    Entity="model.entities.eo.DetalleEO"/>
+  <ViewAttribute
+    Name="IdDetalle"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdDetalle"
+    EntityUsage="DetalleEO"
+    AliasName="ID_DETALLE"/>
+  <ViewAttribute
+    Name="IdMovimiento"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdMovimiento"
+    EntityUsage="DetalleEO"
+    AliasName="ID_MOVIMIENTO"/>
+  <ViewAttribute
+    Name="IdProducto"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdProducto"
+    EntityUsage="DetalleEO"
+    AliasName="ID_PRODUCTO"/>
+  <ViewAttribute
+    Name="Cantidad"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Cantidad"
+    EntityUsage="DetalleEO"
+    AliasName="CANTIDAD"/>
+  <ViewAttribute
+    Name="Subtotal"
+    PrecisionRule="true"
+    EntityAttrName="Subtotal"
+    EntityUsage="DetalleEO"
+    AliasName="SUBTOTAL"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

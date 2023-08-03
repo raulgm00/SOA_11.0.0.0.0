@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  Name="MovimientoEO"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="T_MOVIMIENTO"
+  AliasName="MovimientoEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.eo.MovimientoEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="IdMovimiento"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    ColumnName="ID_MOVIMIENTO"
+    SQLType="NUMERIC"
+    Domain="oracle.jbo.domain.DBSequence"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="T_MOVIMIENTO"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IdCliente"
+    IsNotNull="true"
+    ColumnName="ID_CLIENTE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_MOVIMIENTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Estado"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="ESTADO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="T_MOVIMIENTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FechaMov"
+    IsNotNull="true"
+    ColumnName="FECHA_MOV"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="T_MOVIMIENTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="Total"
+    Precision="8"
+    Scale="2"
+    ColumnName="TOTAL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="T_MOVIMIENTO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="DetalleEO"
+    Association="model.entities.ass.FkTDetalleId_to_MovimientoAssoc"
+    AssociationEnd="model.entities.ass.FkTDetalleId_to_MovimientoAssoc.DetalleEO"
+    AssociationOtherEnd="model.entities.ass.FkTDetalleId_to_MovimientoAssoc.MovimientoEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ClienteEO"
+    Association="model.entities.ass.FkMovimientoId_to_ClienteAssoc"
+    AssociationEnd="model.entities.ass.FkMovimientoId_to_ClienteAssoc.ClienteEO"
+    AssociationOtherEnd="model.entities.ass.FkMovimientoId_to_ClienteAssoc.MovimientoEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkTMovimientoIdMov"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_T_MOVIMIENTO_ID_MOV"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.IdMovimiento"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011743">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011743"/>
+      <Attr Name="_checkCondition" Value='"ID_MOVIMIENTO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0011744">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011744"/>
+      <Attr Name="_checkCondition" Value='"ID_CLIENTE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.IdCliente"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011745">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011745"/>
+      <Attr Name="_checkCondition" Value='"ESTADO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.Estado"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011746">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011746"/>
+      <Attr Name="_checkCondition" Value='"FECHA_MOV" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.FechaMov"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTMovimientoIdCli">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_T_CLIENTE_ID_CLI"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_T_MOVIMIENTO_ID_CLI"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.IdCliente"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_MovimientoEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UK_CLIENTE_EO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MOVIMIENTO_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.IdCliente"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_MovimientoEO1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UK_CLIENTE_EO"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MOVIMIENTO_EO1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.eo.MovimientoEO.IdCliente"/>
+    </AttrArray>
+  </Key>
+  <validation:CollectionValidationBean
+    Name="MovimientoEO_Rule_0"
+    Accessor="DetalleEO"
+    CollAttribute="IdMovimiento"
+    ResId="model.entities.eo.MovimientoEO_Rule_0"
+    OperandType="LITERAL"
+    Inverse="false"
+    CompareType="GREATERTHAN"
+    CompareValue="0"
+    Operation="count"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>
